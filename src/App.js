@@ -7,15 +7,18 @@ function App() {
 
 	const addUserhandler = (uname, uage) => {
 		setUserList((previousOutput) => {
-			return [...previousOutput, { username: uname, age: uage , id: Math.random()}];
+			return [
+				...previousOutput,
+				{ username: uname, age: uage, id: Math.random() },
+			];
 		});
 	};
 
 	return (
-		<div>
+		<React.Fragment>
 			<AddUser onAddUser={addUserhandler} />
 			<UserList users={userList} />
-		</div>
+		</React.Fragment>
 	);
 }
 
