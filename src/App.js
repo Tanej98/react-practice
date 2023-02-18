@@ -7,7 +7,6 @@ function App() {
 
 	const addUserhandler = (uname, uage) => {
 		setUserList((previousOutput) => {
-			console.log(previousOutput);
 			return [...previousOutput, { username: uname, age: uage , id: Math.random()}];
 		});
 	};

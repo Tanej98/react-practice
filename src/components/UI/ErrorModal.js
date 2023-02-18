@@ -5,19 +5,26 @@ import Button from "./Button";
 
 import classes from "./ErrorModal.module.css";
 
-const ErrorModal = () => {
+const ErrorModal = (props) => {
+
+	const onClickOkay = () => {
+		props.clickOkay();
+	}
 	return (
-		<Card className={classes.modal}>
+		<div>
+			<div onClick={onClickOkay} className={classes.backdrop} />
+			<Card className={classes.modal}>
 			<header className={classes.header}>
-				<h2></h2>
+				<h2>{props.title}</h2>
 			</header>
 			<div className={classes.content}>
-				<p></p>
+				<p>{props.message}</p>
 			</div>
 			<footer className={classes.actions}>
-				<Button></Button>
+				<Button onClick={onClickOkay}>Okay</Button>
 			</footer>
 		</Card>
+		</div>
 	);
 };
 
